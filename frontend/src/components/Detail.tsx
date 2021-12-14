@@ -1,11 +1,5 @@
 import {useEffect, useState} from 'react';
-import {Button, Box} from '@mui/material';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-
+import {Button, Box, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from '@mui/material';
 interface params{
     isOpen: boolean
     name: string
@@ -27,16 +21,17 @@ const Detail = ({isOpen, name, priority, deadline, comment}:params) => {
 
     return (
         <Dialog open={open} onClose={handleClose} fullWidth={true}>
-            <DialogTitle><h2>{name}</h2></DialogTitle>
+            <DialogTitle sx={{fontWeight: 'bold', fontSize:'35px'}}>{name}</DialogTitle>
             <DialogContent>            
                 <DialogContentText>
-                    <p>Priority</p>
-                    <span className='basicText'>{priority}</span>
-                    <p>Deadline</p>
-                    <span className='basicText'>{deadline}</span>
-                    <p>Comment</p>
-                    <Box component='div' className='basicText' sx={{ whiteSpace: 'normal' }}>{comment}</Box>
+                    Priority
                 </DialogContentText>
+                    <Box component='span' className='basicText'>{priority}</Box>
+                    <DialogContentText>Deadline</DialogContentText>
+                    <Box component='span' className='basicText'>{deadline}</Box>
+                    <DialogContentText>Comment</DialogContentText>
+                    <Box component='div' className='basicText' sx={{ whiteSpace: 'normal' }}>{comment}</Box>
+                
             </DialogContent>
             <DialogActions>
                 <Button variant="outlined" color='inherit' onClick={handleClose}>Close</Button>

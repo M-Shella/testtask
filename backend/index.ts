@@ -1,5 +1,5 @@
 import router from './routes'
-import express, { NextFunction, Request, Response } from 'express';
+import express from 'express';
 import { config } from 'dotenv';
 import morgan from 'morgan';
 import helmet from 'helmet';
@@ -15,6 +15,7 @@ app.listen(process.env.PORT, () => {
 
 if (process.env.NODE_ENV == 'development') app.use(morgan('dev'))
 if (process.env.NODE_ENV == 'production') app.use(helmet())
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(router)

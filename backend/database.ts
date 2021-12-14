@@ -20,7 +20,7 @@ export const db = new Database(DBSOURCE, (err) => {
         // Table already created
         if (err) return;
         // Table just created, creating some rows
-        var insert = 'INSERT INTO orders (name, priority, deadline, comment) VALUES (?,?,?,?)'
-        db.run(insert, ["Order #1",'medium','2004-05-23', "test"])
+        // var insert = 'INSERT INTO orders (name, priority, deadline, comment) VALUES (?,?,?,?)'
+        // db.run(insert, ["Order #1",'medium','2004-05-23', "test"])
     });  
 });
