@@ -31,7 +31,6 @@ const Detail = ({isOpen, name, priority, deadline, comment}:params) => {
                     <Box component='span' className='basicText'>{deadline}</Box>
                     <DialogContentText>Comment</DialogContentText>
                     <Box component='div' className='basicText' sx={{ whiteSpace: 'normal' }}>{comment}</Box>
-                
             </DialogContent>
             <DialogActions>
                 <Button variant="outlined" color='inherit' onClick={handleClose}>Close</Button>
